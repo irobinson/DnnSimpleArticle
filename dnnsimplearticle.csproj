@@ -31,7 +31,8 @@
     <DebugType>full</DebugType>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <OutputPath>..\..\bin\</OutputPath>
-    <DocumentationFile>dnnsimplearticle.xml</DocumentationFile>
+    <DocumentationFile>
+    </DocumentationFile>
     <WarningLevel>1</WarningLevel>
     <NoWarn>1591,3005</NoWarn>
   </PropertyGroup>

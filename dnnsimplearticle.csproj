@@ -29,6 +29,7 @@
     <OutputPath>..\..\bin\</OutputPath>
     <DocumentationFile>dnnsimplearticle.xml</DocumentationFile>
     <WarningLevel>1</WarningLevel>
+    <NoWarn>1591,3005</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>

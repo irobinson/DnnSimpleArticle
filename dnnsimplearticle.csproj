@@ -175,7 +175,7 @@
     <None Include="BuildScripts\ModulePackage.targets" />
     <None Include="BuildScripts\MSBuild.Community.Tasks.Targets" />
     <None Include="Providers\DataProviders\SqlDataProvider\00.00.01.SqlDataProvider" />
-    <None Include="dnnsimplearticle.dnn" />
+    <None Include="DnnSimpleArticle.dnn" />
     <None Include="Providers\DataProviders\SqlDataProvider\00.00.03.SqlDataProvider" />
     <None Include="Providers\DataProviders\SqlDataProvider\00.00.07.SqlDataProvider" />
     <None Include="Providers\DataProviders\SqlDataProvider\Uninstall.SqlDataProvider" />

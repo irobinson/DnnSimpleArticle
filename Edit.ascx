@@ -13,9 +13,7 @@
         <dnn:label ID="lblDescription" ControlName="txtDescription" runat="server" />
     <dd>
         <dnn:TextEditor ID="txtDescription" runat="server" Width="600px" Height="200px" />
-
-        <asp:RequiredFieldValidator ID="rfvDescription" runat="server" ControlToValidate="txtDescription"
-            CssClass="NormalRed" />
+        <asp:RequiredFieldValidator ID="rfvDescription" runat="server" ControlToValidate="txtDescription" CssClass="NormalRed" />
     </dd>
     <dt>
         <dnn:label ID="lblBody" ControlName="txtBody" runat="server" />
@@ -32,7 +30,6 @@
     </dt>
     <dd>
         <asp:LinkButton ID="lbSave" runat="server" resourcekey="lbSave" OnClick="LbSaveClick" />
-        <asp:LinkButton ID="lbCancel" runat="server" resourcekey="lbCancel" OnClick="LbCancelClick"
-            CausesValidation="false" />
+        <asp:LinkButton ID="lbCancel" runat="server" resourcekey="lbCancel" OnClick="LbCancelClick" CausesValidation="false" />
     </dd>
 </dl>

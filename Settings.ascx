@@ -10,19 +10,10 @@
         <asp:TextBox ID="txtPageSize" runat="server" />
     </dd>
     <dt>
-        <dnn:label ID="lblShowCategories" runat="server" ControlName="chkShowCategories"
-            Text="Show Categories"></dnn:label>
+        <dnn:label ID="lblShowCategories" runat="server" ControlName="chkShowCategories" Text="Show Categories"></dnn:label>
     </dt>
     <dd>
         <asp:CheckBox ID="chkShowCategories" runat="server" /></dd>
-        <!--
-    <dt>
-        <dnn:label ID="lblRichDescriptions" runat="server" ControlName="chkRichDescriptions"
-            Text="Enable Rich Descriptions"></dnn:label>
-    </dt>
-    <dd>
-        <asp:CheckBox ID="chkRichDescriptions" runat="server" /></dd>
-        -->
 </dl>
 <br />
-<asp:LinkButton ID="lnkDeleteAll" runat="server" resourcekey="lnkDeleteAll" OnClick="lnkDeleteAll_Click" />
+<asp:LinkButton ID="lnkDeleteAll" runat="server" resourcekey="lnkDeleteAll" OnClick="DeleteAllClick" />

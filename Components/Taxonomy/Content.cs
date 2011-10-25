@@ -84,10 +84,6 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Components.Taxonomy
             objContent.Content = objArticle.Title + " " + HttpUtility.HtmlDecode(objArticle.Description);
             objContent.TabID = tabId;
 
-            //testing meta data code
-            //Util.GetContentController().DeleteMetaData(objContent, "Description", objArticle.Description);
-            //Util.GetContentController().AddMetaData(objContent, "Description", objArticle.Description);
-
             Util.GetContentController().UpdateContentItem(objContent);
 
             // Update Terms
@@ -112,8 +108,6 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Components.Taxonomy
             Util.GetContentController().DeleteContentItem(objContent);
         }
 
-        #region Private Methods
-
         /// <summary>
         /// Creates a Content Type (for taxonomy) in the data store.
         /// </summary>
@@ -125,9 +119,6 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Components.Taxonomy
 
             return typeController.AddContentType(objContentType);
         }
-
-        #endregion
-
     }
 }
 

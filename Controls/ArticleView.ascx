@@ -10,8 +10,6 @@
 </div>
 
 <div class="ArticleAdmin" runat="server" id="ArticleAdmin">
-    <asp:LinkButton id="lnkEdit" runat="server" resourcekey="EditArticle" 
-        onclick="lnkEdit_Click" />
-    <asp:LinkButton ID="lnkDelete" runat="server" ResourceKey="DeleteArticle" 
-        onclick="lnkDelete_Click" />
+    <asp:LinkButton id="lnkEdit" runat="server" resourcekey="EditArticle" onclick="lnkEdit_Click" />
+    <asp:LinkButton ID="lnkDelete" runat="server" ResourceKey="DeleteArticle" onclick="lnkDelete_Click" />
 </div>

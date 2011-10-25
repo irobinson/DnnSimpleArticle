@@ -18,21 +18,19 @@
 // DEALINGS IN THE SOFTWARE.
 //
 
-using System;
-using System.Web.UI;
-using DotNetNuke.Framework;
-using DotNetNuke.Modules.DnnSimpleArticle.Components;
-using DotNetNuke.Entities.Modules;
-using DotNetNuke.Entities.Content.Common;
-using DotNetNuke.Services.Exceptions;
-using DotNetNuke.Entities.Content;
-using DotNetNuke.Services.Localization;
-using DotNetNuke.UI.Utilities;
-using Globals = DotNetNuke.Common.Globals;
-
 namespace DotNetNuke.Modules.DnnSimpleArticle.Controls
 {
+    using System;
+    using System.Web.UI;
     using Components;
+    using Entities.Content;
+    using Entities.Content.Common;
+    using Entities.Modules;
+    using Framework;
+    using Services.Exceptions;
+    using Services.Localization;
+    using UI.Utilities;
+    using Globals = Common.Globals;
 
     ///<summary>
     /// A simple control to display an individual article

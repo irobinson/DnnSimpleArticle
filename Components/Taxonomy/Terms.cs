@@ -18,19 +18,16 @@
 // DEALINGS IN THE SOFTWARE.
 //
 
-using DotNetNuke.Entities.Content.Common;
-using DotNetNuke.Entities.Content;
-
-
 namespace DotNetNuke.Modules.DnnSimpleArticle.Components.Taxonomy
 {
+    using Entities.Content;
+    using Entities.Content.Common;
 
     ///<summary>
     /// The terms class used for managing categories for Articles
     ///</summary>
     public class Terms
     {
-
         ///<summary>
         /// This should run only after the Article has been added/updated in data store and the ContentItem exists.
         ///</summary>

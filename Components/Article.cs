@@ -18,12 +18,12 @@
 // DEALINGS IN THE SOFTWARE.
 //
 
-using System;
-using DotNetNuke.Common.Utilities;
-using DotNetNuke.Entities.Content;
-
 namespace DotNetNuke.Modules.DnnSimpleArticle.Components
 {
+    using System;
+    using Common.Utilities;
+    using Entities.Content;
+
     ///<summary>
     /// The Article object for use in our article module
     ///</summary>
@@ -108,8 +108,6 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Components
             ArticleId = ArticleController.SaveArticle(this, tabId);
         }
 
-        #region IHydratable Implementation
-
         /// <summary>
         /// 
         /// </summary>
@@ -124,7 +122,6 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Components
             Title = Null.SetNullString(dr["Title"]);
             Description = Null.SetNullString(dr["Description"]);
             Body = Null.SetNullString(dr["Body"]);
-            //PortalId = Null.SetNullInteger(dr["PortalId"]);
             CreatedByUserId = Null.SetNullInteger(dr["CreatedByUserId"]);
             LastModifiedByUserId = Null.SetNullInteger(dr["LastModifiedByUserId"]);
             CreatedOnDate = Null.SetNullDateTime(dr["CreatedOnDate"]);
@@ -142,7 +139,5 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Components
             get { return ArticleId; }
             set { ArticleId = value; }
         }
-
-        #endregion
     }
 }

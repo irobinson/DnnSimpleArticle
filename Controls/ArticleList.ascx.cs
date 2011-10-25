@@ -18,23 +18,20 @@
 // DEALINGS IN THE SOFTWARE.
 //
 
-
-using System;
-using DotNetNuke.Entities.Content.Common;
-using DotNetNuke.Entities.Modules;
-using DotNetNuke.Modules.DnnSimpleArticle.Components;
-using System.Collections.Specialized;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Web.UI.WebControls;
-using DotNetNuke.Services.Exceptions;
-using DotNetNuke.Services.Localization;
-using DotNetNuke.UI.Utilities;
-using DotNetNuke.Web.UI.WebControls;
-using Globals = DotNetNuke.Common.Globals;
-
 namespace DotNetNuke.Modules.DnnSimpleArticle.Controls
 {
+    using System;
+    using Entities.Content.Common;
+    using Entities.Modules;
+    using System.Collections.Specialized;
+    using System.Collections.Generic;
+    using System.Globalization;
+    using System.Web.UI.WebControls;
+    using Services.Exceptions;
+    using Services.Localization;
+    using UI.Utilities;
+    using Web.UI.WebControls;
+    using Globals = Common.Globals;
     using Components;
 
     ///<summary>
@@ -44,7 +41,6 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Controls
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
             try
             {
                 rptArticleList.DataSource = ArticleController.GetArticles(ModuleId, PageSize, PageNumber);
@@ -70,8 +66,7 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Controls
             SetPagingLink(queryString, lnkPrevious, PageNumber - 1 > -1, PageNumber - 1, TabId);
         }
 
-        private static void SetPagingLink(NameValueCollection queryString
-            , HyperLink link, bool showLink, int linkedPageId, int tabId)
+        private static void SetPagingLink(NameValueCollection queryString, HyperLink link, bool showLink, int linkedPageId, int tabId)
         {
             if (showLink)
             {
@@ -158,8 +153,6 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Controls
             }
 
             //handle paging list
-
-
             if (curArticle.TotalRecords > PageSize)
                 BuildPageList(ArticleController.GetArticles(ModuleId, 1, 1)[0].TotalRecords);
 

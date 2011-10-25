@@ -18,13 +18,11 @@
 // DEALINGS IN THE SOFTWARE.
 //
 
-using System;
-using System.Collections.Generic;
-using DotNetNuke.Modules.DnnSimpleArticle.Data;
-using DotNetNuke.Common.Utilities;
-
 namespace DotNetNuke.Modules.DnnSimpleArticle.Components
 {
+    using System;
+    using System.Collections.Generic;
+    using Common.Utilities;
     using Data;
 
     ///<summary>
@@ -32,7 +30,6 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Components
     ///</summary>
     public class ArticleController
     {
-
         ///<summary>
         /// Get an individual article
         ///</summary>
@@ -98,9 +95,7 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Components
             }
             return a.ArticleId;
         }
-
-
-
+        
         ///<summary>Delete an article based on ID
         ///</summary>
         ///<param name="articleId"></param>
@@ -117,11 +112,9 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Components
             DataProvider.Instance().DeleteArticles(moduleId);
         }
 
-
         public static string GetArticleLink(int tabId, int articleId)
         {
             return Common.Globals.NavigateURL(tabId, String.Empty, "aid=" + articleId);
         }
-
     }
 }

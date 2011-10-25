@@ -179,8 +179,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="App_LocalResources\View.ascx.resx" />
-    <None Include="BuildScripts\ModulePackage.targets" />
-    <None Include="BuildScripts\MSBuild.Community.Tasks.Targets" />
     <None Include="Providers\DataProviders\SqlDataProvider\00.00.01.SqlDataProvider" />
     <None Include="DnnSimpleArticle.dnn" />
     <None Include="Providers\DataProviders\SqlDataProvider\00.00.03.SqlDataProvider" />

@@ -3,7 +3,7 @@
     <package name="DnnSimpleArticle" type="Module" version="00.01.00">
       <friendlyName>DnnSimpleArticle</friendlyName>
       <description>DotNetNuke.com DnnSimpleArticle module</description>
-      <iconFile>DesktopModules/DnnSimpleArticle/icon/SimpleArticleLogo.jpg</iconFile>
+      <iconFile>DesktopModules/DnnSimpleArticle/Icon/SimpleArticleLogo.jpg</iconFile>
       <owner>
         <name>DotNetNuke.com</name>
         <organization>DotNetNuke.com</organization>

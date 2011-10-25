@@ -9,8 +9,8 @@
     <ProjectGuid>{F2203709-D3B9-4CA1-9D1B-5DA50135B61E}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace>DotNetNuke.Modules.dnnsimplearticle</RootNamespace>
-    <AssemblyName>dnnsimplearticle</AssemblyName>
+    <RootNamespace>DotNetNuke.Modules.DnnSimpleArticle</RootNamespace>
+    <AssemblyName>DnnSimpleArticle</AssemblyName>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>
@@ -34,14 +34,16 @@
     <DocumentationFile>
     </DocumentationFile>
     <WarningLevel>1</WarningLevel>
-    <NoWarn>1591,3005</NoWarn>
+    <NoWarn>1591,3005,0108</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <DefineConstants>TRACE</DefineConstants>
     <Optimize>true</Optimize>
     <OutputPath>..\..\bin\</OutputPath>
-    <DocumentationFile>dnnsimplearticle.xml</DocumentationFile>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>1591,3005,0108</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DotNetNuke, Version=6.1.0.1004, Culture=neutral, processorArchitecture=MSIL">

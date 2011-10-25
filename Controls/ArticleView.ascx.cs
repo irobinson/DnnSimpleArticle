@@ -37,6 +37,12 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Controls
     ///</summary>
     public partial class ArticleView : DnnSimpleArticleModuleBase
     {
+        protected override void OnInit(EventArgs e)
+        {
+            base.OnInit(e);
+            Load += PageLoad;
+        }
+
         protected void PageLoad(object sender, EventArgs e)
         {
             try

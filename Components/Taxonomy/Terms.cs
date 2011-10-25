@@ -22,7 +22,7 @@ using DotNetNuke.Entities.Content.Common;
 using DotNetNuke.Entities.Content;
 
 
-namespace DotNetNuke.Modules.dnnsimplearticle.Components.Taxonomy
+namespace DotNetNuke.Modules.DnnSimpleArticle.Components.Taxonomy
 {
 
     ///<summary>

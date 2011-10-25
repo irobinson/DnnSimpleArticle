@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ArticleView.ascx.cs" Inherits="DotNetNuke.Modules.dnnsimplearticle.Controls.ArticleView" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ArticleView.ascx.cs" Inherits="DotNetNuke.Modules.DnnSimpleArticle.Controls.ArticleView" %>
 <%@ Register TagPrefix="dnn" Assembly="DotNetNuke.Web" Namespace="DotNetNuke.Web.UI.WebControls" %>
 
 <asp:Panel ID="plArticleTitle" runat="server" CssClass="Head" />

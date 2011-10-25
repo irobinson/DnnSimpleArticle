@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ArticleList.ascx.cs"
-    Inherits="DotNetNuke.Modules.dnnsimplearticle.Controls.ArticleList" %>
+    Inherits="DotNetNuke.Modules.DnnSimpleArticle.Controls.ArticleList" %>
 <%@ Register TagPrefix="dnn" Assembly="DotNetNuke.Web" Namespace="DotNetNuke.Web.UI.WebControls" %>
 <asp:Repeater ID="rptArticleList" runat="server" OnItemDataBound="RptArticleListOnItemDataBound"
     OnItemCommand="RptArticleListOnItemCommand">

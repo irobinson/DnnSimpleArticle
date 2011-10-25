@@ -22,11 +22,13 @@
 using System;
 using System.Collections.Generic;
 using DotNetNuke.Entities.Portals;
-using DotNetNuke.Modules.dnnsimplearticle.Components;
+using DotNetNuke.Modules.DnnSimpleArticle.Components;
 using DotNetNuke.Services.Sitemap;
 
-namespace DotNetNuke.Modules.dnnsimplearticle.Providers.Sitemap
+namespace DotNetNuke.Modules.DnnSimpleArticle.Providers.Sitemap
 {
+    using Components;
+
     public class Sitemap : SitemapProvider
     {
         

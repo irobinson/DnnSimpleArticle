@@ -1,5 +1,4 @@
-<%@ Control Language="C#" Inherits="DotNetNuke.Modules.dnnsimplearticle.Edit" AutoEventWireup="True"
-    CodeBehind="Edit.ascx.cs" %>
+<%@ Control Language="C#" Inherits="DotNetNuke.Modules.DnnSimpleArticle.Edit" AutoEventWireup="True" CodeBehind="Edit.ascx.cs" %>
 <%@ Register TagPrefix="dnn" TagName="label" Src="~/controls/LabelControl.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="TextEditor" Src="~/controls/TextEditor.ascx" %>
 <%@ Register TagPrefix="dnn" Assembly="DotNetNuke.Web" Namespace="DotNetNuke.Web.UI.WebControls" %>

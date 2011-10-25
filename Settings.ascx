@@ -1,4 +1,4 @@
-<%@ Control Language="C#" AutoEventWireup="false" Inherits="DotNetNuke.Modules.dnnsimplearticle.Settings"
+<%@ Control Language="C#" AutoEventWireup="false" Inherits="DotNetNuke.Modules.DnnSimpleArticle.Settings"
     CodeBehind="Settings.ascx.cs" %>
 <%@ Register TagPrefix="dnn" TagName="label" Src="~/controls/labelControl.ascx" %>
 <dl>

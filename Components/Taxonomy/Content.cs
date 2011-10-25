@@ -24,7 +24,7 @@ using DotNetNuke.Common.Utilities;
 using DotNetNuke.Entities.Content;
 using DotNetNuke.Entities.Content.Common;
 
-namespace DotNetNuke.Modules.dnnsimplearticle.Components.Taxonomy
+namespace DotNetNuke.Modules.DnnSimpleArticle.Components.Taxonomy
 {
     ///<summary>
     /// The content class used for creating and maintaining content items

@@ -21,7 +21,7 @@
 using System;
 using System.Web.UI;
 using DotNetNuke.Framework;
-using DotNetNuke.Modules.dnnsimplearticle.Components;
+using DotNetNuke.Modules.DnnSimpleArticle.Components;
 using DotNetNuke.Entities.Modules;
 using DotNetNuke.Entities.Content.Common;
 using DotNetNuke.Services.Exceptions;
@@ -30,12 +30,14 @@ using DotNetNuke.Services.Localization;
 using DotNetNuke.UI.Utilities;
 using Globals = DotNetNuke.Common.Globals;
 
-namespace DotNetNuke.Modules.dnnsimplearticle.Controls
+namespace DotNetNuke.Modules.DnnSimpleArticle.Controls
 {
+    using Components;
+
     ///<summary>
     /// A simple control to display an individual article
     ///</summary>
-    public partial class ArticleView : dnnsimplearticleModuleBase
+    public partial class ArticleView : DnnSimpleArticleModuleBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

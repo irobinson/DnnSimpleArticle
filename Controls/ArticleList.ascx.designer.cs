@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DotNetNuke.Modules.dnnsimplearticle.Controls {
+namespace DotNetNuke.Modules.DnnSimpleArticle.Controls {
     
     
     public partial class ArticleList {

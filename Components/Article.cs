@@ -22,7 +22,7 @@ using System;
 using DotNetNuke.Common.Utilities;
 using DotNetNuke.Entities.Content;
 
-namespace DotNetNuke.Modules.dnnsimplearticle.Components
+namespace DotNetNuke.Modules.DnnSimpleArticle.Components
 {
     ///<summary>
     /// The Article object for use in our article module

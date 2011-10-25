@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DotNetNuke.Modules.dnnsimplearticle {
+namespace DotNetNuke.Modules.DnnSimpleArticle {
     
     
     public partial class Settings {

@@ -22,7 +22,7 @@
 using System;
 using DotNetNuke.Entities.Content.Common;
 using DotNetNuke.Entities.Modules;
-using DotNetNuke.Modules.dnnsimplearticle.Components;
+using DotNetNuke.Modules.DnnSimpleArticle.Components;
 using System.Collections.Specialized;
 using System.Collections.Generic;
 using System.Globalization;
@@ -33,12 +33,14 @@ using DotNetNuke.UI.Utilities;
 using DotNetNuke.Web.UI.WebControls;
 using Globals = DotNetNuke.Common.Globals;
 
-namespace DotNetNuke.Modules.dnnsimplearticle.Controls
+namespace DotNetNuke.Modules.DnnSimpleArticle.Controls
 {
+    using Components;
+
     ///<summary>
     /// A simple control that binds a list of articles
     ///</summary>
-    public partial class ArticleList : dnnsimplearticleModuleBase
+    public partial class ArticleList : DnnSimpleArticleModuleBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

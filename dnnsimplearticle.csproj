@@ -152,7 +152,7 @@
       <DependentUpon>Settings.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="dnnsimplearticleSettingsBase.cs">
+    <Compile Include="DnnSimpleArticleSettingsBase.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View.ascx.designer.cs">
@@ -162,7 +162,7 @@
       <DependentUpon>View.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="dnnsimplearticleModuleBase.cs">
+    <Compile Include="DnnSimpleArticleModuleBase.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
   </ItemGroup>

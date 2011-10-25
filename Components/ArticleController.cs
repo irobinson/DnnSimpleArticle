@@ -20,11 +20,13 @@
 
 using System;
 using System.Collections.Generic;
-using DotNetNuke.Modules.dnnsimplearticle.Data;
+using DotNetNuke.Modules.DnnSimpleArticle.Data;
 using DotNetNuke.Common.Utilities;
 
-namespace DotNetNuke.Modules.dnnsimplearticle.Components
+namespace DotNetNuke.Modules.DnnSimpleArticle.Components
 {
+    using Data;
+
     ///<summary>
     /// ArticleController provides the implementation of methods for our article
     ///</summary>

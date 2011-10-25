@@ -3,6 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DnnSimpleArticle", "DnnSimpleArticle.csproj", "{F2203709-D3B9-4CA1-9D1B-5DA50135B61E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildScripts", "BuildScripts", "{FDF8518C-D7F8-4ACC-A333-531C1AD389F0}"
+	ProjectSection(SolutionItems) = preProject
+		BuildScripts\ModulePackage.targets = BuildScripts\ModulePackage.targets
+		BuildScripts\MSBuild.Community.Tasks.Targets = BuildScripts\MSBuild.Community.Tasks.Targets
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

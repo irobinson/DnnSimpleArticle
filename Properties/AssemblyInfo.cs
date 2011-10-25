@@ -30,7 +30,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 //
-[assembly: AssemblyTitle("dnnsimplearticle")]
+[assembly: AssemblyTitle("DnnSimpleArticle")]
 [assembly: AssemblyDescription("A DotNetNuke Module for displaying articles")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]

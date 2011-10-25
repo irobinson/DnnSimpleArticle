@@ -220,7 +220,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Controls\App_LocalResources\ArticleView.ascx.resx" />
-    <Content Include="i\SimpleArticleLogo.jpg" />
+    <Content Include="icon\SimpleArticleLogo.jpg" />
     <Content Include="License.txt" />
     <Content Include="ReleaseNotes.txt" />
   </ItemGroup>

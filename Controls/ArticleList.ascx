@@ -6,7 +6,7 @@
     <ItemTemplate>
         <asp:Panel CssClass="ArticleWrapper" runat="server">
             <asp:Panel runat="server" ID="pnlArticleTitle" CssClass="ArticleTitle">
-                <asp:HyperLink ID="lnkArticle" runat="server" CssClass="SubHead" NavigateUrl='<%# GetArticleLink(DataBinder.Eval(Container.DataItem,"ArticleId").ToString())%>'><%# System.Web.HttpUtility.HtmlEncode(DataBinder.Eval(Container.DataItem,"Title").ToString()) %></asp:HyperLink>
+                <asp:HyperLink ID="lnkArticle" runat="server" CssClass="SubHead" NavigateUrl='<%# GetArticleLink(DataBinder.Eval(Container.DataItem,"ArticleId").ToString())%>'><%# HttpUtility.HtmlEncode(DataBinder.Eval(Container.DataItem,"Title").ToString()) %></asp:HyperLink>
             </asp:Panel>
             <asp:Panel runat="server" ID="pnlArticleDescription" CssClass="Normal ArticleDescription">
                 <%# HttpUtility.HtmlDecode(DataBinder.Eval(Container.DataItem, "Description").ToString())%>

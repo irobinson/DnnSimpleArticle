@@ -21,7 +21,7 @@
 namespace DotNetNuke.Modules.DnnSimpleArticle.Providers.Sitemap
 {
     using System.Collections.Generic;
-
+    using System.Linq;
     using Components;
     using Entities.Portals;
     using Services.Sitemap;
@@ -30,22 +30,14 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Providers.Sitemap
     {
         public override List<SitemapUrl> GetUrls(int portalId, PortalSettings ps, string version)
         {
-            var listOfUrls = new List<SitemapUrl>();
-
-            foreach (Article ai in ArticleController.GetAllArticles(portalId))
-            {
-                var pageUrl = new SitemapUrl
-                                  {
-                                      Url =
-                                          ArticleController.GetArticleLink(ai.TabID, ai.ArticleId),
-                                      Priority = (float) 0.5,
-                                      LastModified = ai.LastModifiedOnDate,
-                                      ChangeFrequency = SitemapChangeFrequency.Daily
-                                  };
-                listOfUrls.Add(pageUrl);
-
-            }
-            return listOfUrls;
+            return ArticleController.GetAllArticles(portalId).Select(
+                ai => new SitemapUrl
+                    {
+                        Url = ArticleController.GetArticleLink(ai.TabID, ai.ArticleId),
+                        Priority = (float) 0.5,
+                        LastModified = ai.LastModifiedOnDate,
+                        ChangeFrequency = SitemapChangeFrequency.Daily
+                    }).ToList();
         }
     }
 }

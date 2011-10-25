@@ -37,7 +37,7 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Controls
     ///</summary>
     public partial class ArticleView : DnnSimpleArticleModuleBase
     {
-        protected void Page_Load(object sender, EventArgs e)
+        protected void PageLoad(object sender, EventArgs e)
         {
             try
             {
@@ -80,8 +80,7 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Controls
                         var tp = (CDefault) Page;
                         tp.Title = curArticle.Title;
                         //we need to strip HTML from the description                    
-                        tp.Description =
-                            DotNetNuke.Common.Utilities.HtmlUtils.StripTags(Server.HtmlDecode(curArticle.Description),
+                        tp.Description = Common.Utilities.HtmlUtils.StripTags(Server.HtmlDecode(curArticle.Description),
                                                                             false);
 
                         tp.KeyWords += "," + curArticle.Terms.ToDelimittedString(",");
@@ -92,8 +91,7 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Controls
                         }
                         else
                         {
-                            ClientAPI.AddButtonConfirm(lnkDelete,
-                                                       Localization.GetString("ConfirmDelete", LocalResourceFile));
+                            ClientAPI.AddButtonConfirm(lnkDelete, Localization.GetString("ConfirmDelete", LocalResourceFile));
                         }
 
                     }
@@ -105,7 +103,7 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Controls
             }
         }
 
-        protected void lnkEdit_Click(object sender, EventArgs e)
+        protected void EditClick(object sender, EventArgs e)
         {
             if (IsEditable)
             {
@@ -113,7 +111,7 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Controls
             }
         }
 
-        protected void lnkDelete_Click(object sender, EventArgs e)
+        protected void DeleteClick(object sender, EventArgs e)
         {
             if (IsEditable)
             {

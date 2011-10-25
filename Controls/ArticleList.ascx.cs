@@ -21,25 +21,25 @@
 namespace DotNetNuke.Modules.DnnSimpleArticle.Controls
 {
     using System;
-    using Entities.Content.Common;
-    using Entities.Modules;
-    using System.Collections.Specialized;
     using System.Collections.Generic;
+    using System.Collections.Specialized;
     using System.Globalization;
     using System.Web.UI.WebControls;
+    using Components;
+    using Entities.Content.Common;
+    using Entities.Modules;
     using Services.Exceptions;
     using Services.Localization;
     using UI.Utilities;
     using Web.UI.WebControls;
     using Globals = Common.Globals;
-    using Components;
 
     ///<summary>
     /// A simple control that binds a list of articles
     ///</summary>
     public partial class ArticleList : DnnSimpleArticleModuleBase
     {
-        protected void Page_Load(object sender, EventArgs e)
+        protected void PageLoad(object sender, EventArgs e)
         {
             try
             {

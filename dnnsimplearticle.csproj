@@ -69,6 +69,7 @@
     </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -86,6 +87,10 @@
     <Reference Include="Telerik.Web.UI, Version=2011.2.915.20, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\bin\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="WebFormsMvp, Version=1.2.0.0, Culture=neutral, PublicKeyToken=537f18701145dff0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\bin\WebFormsMvp.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -125,8 +130,11 @@
     <Compile Include="Components\Article.cs" />
     <Compile Include="Components\ArticleController.cs" />
     <Compile Include="Components\FeatureController.cs" />
+    <Compile Include="Components\Models\EditModel.cs" />
+    <Compile Include="Components\Presenters\EditPresenter.cs" />
     <Compile Include="Components\Taxonomy\Content.cs" />
     <Compile Include="Components\Taxonomy\Terms.cs" />
+    <Compile Include="Components\Views\IEditView.cs" />
     <Compile Include="Controls\ArticleList.ascx.cs">
       <DependentUpon>ArticleList.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -157,9 +165,6 @@
     </Compile>
     <Compile Include="Settings.ascx.cs">
       <DependentUpon>Settings.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DnnSimpleArticleSettingsBase.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View.ascx.designer.cs">
@@ -224,4 +229,5 @@
     <Content Include="License.txt" />
     <Content Include="ReleaseNotes.txt" />
   </ItemGroup>
+  <ItemGroup />
 </Project>

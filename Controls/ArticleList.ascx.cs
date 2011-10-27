@@ -49,7 +49,7 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Controls
         {
             try
             {
-                rptArticleList.DataSource = ArticleController.GetArticles(ModuleId, PageSize, PageNumber);
+                rptArticleList.DataSource = new ArticleController().GetArticles(ModuleId, PageSize, PageNumber);
                 rptArticleList.DataBind();
             }
             catch (Exception exc)
@@ -160,14 +160,14 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Controls
 
             //handle paging list
             if (curArticle.TotalRecords > PageSize)
-                BuildPageList(ArticleController.GetArticles(ModuleId, 1, 1)[0].TotalRecords);
+                BuildPageList(new ArticleController().GetArticles(ModuleId, 1, 1)[0].TotalRecords);
 
         }
         public void RptArticleListOnItemCommand(object source, RepeaterCommandEventArgs e)
         {
             if (e.CommandName == "Delete")
             {
-                ArticleController.DeleteArticle(Convert.ToInt32(e.CommandArgument));
+                new ArticleController().DeleteArticle(Convert.ToInt32(e.CommandArgument));
             }
             if(e.CommandName=="Edit")
             {

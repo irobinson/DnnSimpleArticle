@@ -105,7 +105,7 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Components
         ///<param name="tabId"></param>
         public void Save(int tabId)
         {
-            ArticleId = ArticleController.SaveArticle(this, tabId);
+            ArticleId = new ArticleController().SaveArticle(this, tabId);
         }
 
         /// <summary>

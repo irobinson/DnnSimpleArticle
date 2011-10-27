@@ -30,14 +30,25 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Components
     ///</summary>
     public class ArticleController
     {
+        private readonly DataProvider dataProvider;
+
+        public ArticleController() : this(new SqlDataProvider())
+        {
+        }
+
+        public ArticleController(DataProvider dataProvider)
+        {
+            this.dataProvider = dataProvider;
+        }
+
         ///<summary>
         /// Get an individual article
         ///</summary>
         ///<param name="articleId"></param>
         ///<returns></returns>
-        public static Article GetArticle(int articleId)
+        public Article GetArticle(int articleId)
         {
-            return CBO.FillObject<Article>(DataProvider.Instance().GetArticle(articleId));
+            return CBO.FillObject<Article>(dataProvider.GetArticle(articleId));
         }
 
         ///<summary>
@@ -45,7 +56,7 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Components
         ///</summary>
         ///<param name="moduleId"></param>
         ///<returns></returns>
-        public static List<Article> GetArticles(int moduleId)
+        public List<Article> GetArticles(int moduleId)
         {
             return GetArticles(moduleId, 1000,0);
         }
@@ -55,9 +66,9 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Components
         ///</summary>
         ///<param name="moduleId"></param>
         ///<returns></returns>
-        public static List<Article> GetArticles(int moduleId, int pageSize, int pageNumber)
+        public List<Article> GetArticles(int moduleId, int pageSize, int pageNumber)
         {
-            return CBO.FillCollection<Article>(DataProvider.Instance().GetArticles(moduleId, pageSize, pageNumber));
+            return CBO.FillCollection<Article>(dataProvider.GetArticles(moduleId, pageSize, pageNumber));
         }
 
         ///<summary>
@@ -65,9 +76,9 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Components
         ///</summary>
         ///<param name="portalId"></param>
         ///<returns></returns>
-        public static List<Article> GetAllArticles(int portalId)
+        public List<Article> GetAllArticles(int portalId)
         {
-            return CBO.FillCollection<Article>(DataProvider.Instance().GetAllArticles(portalId));
+            return CBO.FillCollection<Article>(dataProvider.GetAllArticles(portalId));
         }
 
         ///<summary>Save the article, checks if we are creating new, or updating an existing
@@ -75,11 +86,11 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Components
         ///<param name="a"></param>
         ///<param name="tabId"></param>
         ///<returns></returns>
-        public static int SaveArticle(Article a, int tabId)
+        public int SaveArticle(Article a, int tabId)
         {
             if (a.ArticleId < 1)
             {
-                a.ArticleId = DataProvider.Instance().AddArticle(a);
+                a.ArticleId = dataProvider.AddArticle(a);
 
                 var cntTaxonomy = new Taxonomy.Content();
                 var objContentItem = cntTaxonomy.CreateContentItem(a, tabId);
@@ -89,7 +100,7 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Components
             }
             else
             {
-                DataProvider.Instance().UpdateArticle(a);
+                dataProvider.UpdateArticle(a);
                 var cntTaxonomy = new Taxonomy.Content();
                 cntTaxonomy.UpdateContentItem(a, tabId);
             }
@@ -99,17 +110,17 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Components
         ///<summary>Delete an article based on ID
         ///</summary>
         ///<param name="articleId"></param>
-        public static void DeleteArticle(int articleId)
+        public void DeleteArticle(int articleId)
         {
-            DataProvider.Instance().DeleteArticle(articleId);
+            dataProvider.DeleteArticle(articleId);
         }
 
         ///<summary>Delete all articles based on a moduleid
         ///</summary>
         ///<param name="moduleId"></param>
-        public static void DeleteArticles(int moduleId)
+        public void DeleteArticles(int moduleId)
         {
-            DataProvider.Instance().DeleteArticles(moduleId);
+            dataProvider.DeleteArticles(moduleId);
         }
 
         public static string GetArticleLink(int tabId, int articleId)

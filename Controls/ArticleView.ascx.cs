@@ -51,7 +51,7 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Controls
                 {
                     if (ArticleId > 0)
                     {
-                        var curArticle = ArticleController.GetArticle(ArticleId);
+                        var curArticle = new ArticleController().GetArticle(ArticleId);
                         //display article info on the view control
 
                         plArticleTitle.Controls.Add(new LiteralControl(curArticle.Title));
@@ -121,7 +121,7 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Controls
         {
             if (IsEditable)
             {
-                ArticleController.DeleteArticle(ArticleId);
+                new ArticleController().DeleteArticle(ArticleId);
                 Response.Redirect(Globals.NavigateURL());
             }
         }

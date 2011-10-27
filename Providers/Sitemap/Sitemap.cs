@@ -30,7 +30,7 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Providers.Sitemap
     {
         public override List<SitemapUrl> GetUrls(int portalId, PortalSettings ps, string version)
         {
-            return ArticleController.GetAllArticles(portalId).Select(
+            return new ArticleController().GetAllArticles(portalId).Select(
                 ai => new SitemapUrl
                     {
                         Url = ArticleController.GetArticleLink(ai.TabID, ai.ArticleId),

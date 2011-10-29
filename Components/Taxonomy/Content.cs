@@ -26,10 +26,17 @@ using DotNetNuke.Entities.Content.Common;
 
 namespace DotNetNuke.Modules.DnnSimpleArticle.Components.Taxonomy
 {
+    public interface IContentProvider
+    {
+        ContentItem CreateContentItem(Article objArticle, int tabId);
+        void UpdateContentItem(Article objArticle, int tabId);
+        void DeleteContentItem(Article objArticle);
+    }
+
     ///<summary>
     /// The content class used for creating and maintaining content items
     ///</summary>
-    public class Content
+    public class ContentProvider : IContentProvider
     {
 
         private const string ContentTypeName = "SimpleArticle";

@@ -7,23 +7,36 @@
 
     public class EditPresenter : ModulePresenter<IEditView, EditModel>
     {
-        private readonly ArticleController controller;
+        private readonly IArticleController controller;
+        private readonly IGlobalsHelper globals;
 
-        public EditPresenter(IEditView view) : this(view, new ArticleController())
+        public EditPresenter(IEditView view) : this(view, new ArticleController(), new GlobalsHelper())
         {
         }
 
-        public EditPresenter(IEditView view, ArticleController controller) : base(view)
+        public EditPresenter(IEditView view, IArticleController controller, IGlobalsHelper globals) : base(view)
         {
             this.controller = controller;
+            this.globals = globals;
             this.View.Load += Load;
             this.View.SaveClick += Save;
         }
 
         void Load(object sender, EventArgs eventArgs)
         {
+            Article article;
             var qs = Request.QueryString["aid"];
-            this.View.Model.Article = qs != null ? new ArticleController().GetArticle(Convert.ToInt32(qs)) : new Article();
+            if (qs == null)
+            {
+                this.View.Model.Article = new Article();
+                return;
+            };
+
+            int articleId;
+            if (int.TryParse(qs, out articleId))
+            {
+                this.View.Model.Article = controller.GetArticle(articleId);
+            }
         }
 
         void Save(object sender, SaveClickEventArgs args)
@@ -43,8 +56,8 @@
                 article.Terms.AddRange(args.Terms);
             }
 
-            controller.SaveArticle(article, this.ModuleContext.PortalId);
-            Response.Redirect(Common.Globals.NavigateURL(TabId));
+            controller.SaveArticle(article, this.PortalId);
+            Response.Redirect(globals.NavigateUrl(this.TabId));
         }
     }
 }

@@ -24,21 +24,26 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Components
     using System.Collections.Generic;
     using Common.Utilities;
     using Data;
+    using Taxonomy;
 
     ///<summary>
     /// ArticleController provides the implementation of methods for our article
     ///</summary>
-    public class ArticleController
+    public class ArticleController : IArticleController
     {
         private readonly DataProvider dataProvider;
+        private readonly IContentProvider contentProviderProvider;
+        private readonly IGlobalsHelper globals;
 
-        public ArticleController() : this(new SqlDataProvider())
+        public ArticleController() : this(new SqlDataProvider(), new ContentProvider(), new GlobalsHelper())
         {
         }
 
-        public ArticleController(DataProvider dataProvider)
+        public ArticleController(DataProvider dataProvider, IContentProvider contentProviderProvider, IGlobalsHelper globals)
         {
             this.dataProvider = dataProvider;
+            this.contentProviderProvider = contentProviderProvider;
+            this.globals = globals;
         }
 
         ///<summary>
@@ -48,7 +53,8 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Components
         ///<returns></returns>
         public Article GetArticle(int articleId)
         {
-            return CBO.FillObject<Article>(dataProvider.GetArticle(articleId));
+            var article = dataProvider.GetArticle(articleId);
+            return article != null ? CBO.FillObject<Article>(article) : null;
         }
 
         ///<summary>
@@ -92,8 +98,7 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Components
             {
                 a.ArticleId = dataProvider.AddArticle(a);
 
-                var cntTaxonomy = new Taxonomy.Content();
-                var objContentItem = cntTaxonomy.CreateContentItem(a, tabId);
+                var objContentItem = this.contentProviderProvider.CreateContentItem(a, tabId);
 
                 a.ContentItemId = objContentItem.ContentItemId;
                 SaveArticle(a, tabId);
@@ -101,8 +106,7 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Components
             else
             {
                 dataProvider.UpdateArticle(a);
-                var cntTaxonomy = new Taxonomy.Content();
-                cntTaxonomy.UpdateContentItem(a, tabId);
+                this.contentProviderProvider.UpdateContentItem(a, tabId);
             }
             return a.ArticleId;
         }
@@ -123,9 +127,9 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Components
             dataProvider.DeleteArticles(moduleId);
         }
 
-        public static string GetArticleLink(int tabId, int articleId)
+        public string GetArticleLink(int tabId, int articleId)
         {
-            return Common.Globals.NavigateURL(tabId, String.Empty, "aid=" + articleId);
+            return globals.NavigateUrl(tabId, String.Empty, "aid=" + articleId);
         }
     }
 }

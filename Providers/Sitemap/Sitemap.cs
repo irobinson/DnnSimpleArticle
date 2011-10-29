@@ -33,7 +33,7 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Providers.Sitemap
             return new ArticleController().GetAllArticles(portalId).Select(
                 ai => new SitemapUrl
                     {
-                        Url = ArticleController.GetArticleLink(ai.TabID, ai.ArticleId),
+                        Url = new ArticleController().GetArticleLink(ai.TabID, ai.ArticleId),
                         Priority = (float) 0.5,
                         LastModified = ai.LastModifiedOnDate,
                         ChangeFrequency = SitemapChangeFrequency.Daily

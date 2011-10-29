@@ -130,8 +130,10 @@
     <Compile Include="Components\Article.cs" />
     <Compile Include="Components\ArticleController.cs" />
     <Compile Include="Components\FeatureController.cs" />
+    <Compile Include="Components\IArticleController.cs" />
     <Compile Include="Components\Models\EditModel.cs" />
     <Compile Include="Components\Presenters\EditPresenter.cs" />
+    <Compile Include="Components\GlobalsHelper.cs" />
     <Compile Include="Components\Taxonomy\Content.cs" />
     <Compile Include="Components\Taxonomy\Terms.cs" />
     <Compile Include="Components\Views\IEditView.cs" />

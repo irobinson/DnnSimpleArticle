@@ -99,8 +99,7 @@
         }
 
         [Test]
-        [ExpectedException(typeof (NullReferenceException))]
-        public void Save_NoArticleId_Throws()
+        public void Save_NoArticleId_AddsNewArticle()
         {
             // arrange
             var saveClickEventArgs = new SaveClickEventArgs();
@@ -112,23 +111,9 @@
             view.Raise(x => x.SaveClick += null, saveClickEventArgs);
 
             // assertion is made in the form of a test method attribute
+            articleController.Verify(x => x.SaveArticle(It.IsAny<Article>(), It.IsAny<int>()), Times.Once());
         }
 
-        [Test]
-        [ExpectedException(typeof (NullReferenceException))]
-        public void Save_InvalidArticleId_Throws()
-        {
-            // arrange
-            var saveClickEventArgs = new SaveClickEventArgs { ArticleId = -1 };
-            context = GetMockContext(new NameValueCollection());
-            new EditPresenter(view.Object, articleController.Object, globalsHelper.Object)
-                { HttpContext = context.Object };
-
-            // act
-            view.Raise(x => x.SaveClick += null, saveClickEventArgs);
-
-            // assertion is made in the form of a test method attribute
-        }
 
         [Test]
         public void Save_ValidArticleId_CallsSave()

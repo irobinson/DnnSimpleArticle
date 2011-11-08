@@ -41,7 +41,7 @@
 
         void Save(object sender, SaveClickEventArgs args)
         {
-            var article = controller.GetArticle(args.ArticleId);
+            var article = controller.GetArticle(args.ArticleId) ?? new Article { CreatedOnDate = DateTime.Now, CreatedByUserId = this.UserId };
 
             article.Title = args.Title;
             article.Description = args.Description;

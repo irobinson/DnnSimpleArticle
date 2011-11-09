@@ -89,7 +89,7 @@ namespace DotNetNuke.Modules.DnnSimpleArticle.Controls
                         tp.Description = Common.Utilities.HtmlUtils.StripTags(Server.HtmlDecode(curArticle.Description),
                                                                             false);
 
-                        tp.KeyWords += "," + curArticle.Terms.ToDelimittedString(",");
+                        //tp.KeyWords += "," + curArticle.Terms.ToDelimittedString(",");
 
                         if (!IsEditable)
                         {
